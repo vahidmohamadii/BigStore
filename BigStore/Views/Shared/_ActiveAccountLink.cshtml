@@ -1,0 +1,13 @@
+﻿@model DataLayer.Entities.User
+
+
+
+
+    <div class="container-content">
+        <header><h2> لینک فعالسازی </h2></header>
+
+        <p>کاربر محترم ثبت نام شما با موفقیت انجام شد برای فعالسازی حساب خود بر روی لینک  کلیک کنید</p>
+
+
+    <a asp-controller="Account" asp-action="ActiveAccount" asp-route-code="@Model.ActiveCode"> فعالسازی حساب کاربری</a>
+    </div>
