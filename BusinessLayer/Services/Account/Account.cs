@@ -87,5 +87,17 @@ namespace BusinessLayer.Services.Account
         {
             return _context.users.Where(x => x.UserId == userId).FirstOrDefault();
         }
+
+        public ShowUserPanelData GetUserInfoForUserPanel(string userName)
+        {
+            return _context.users.Where(x => x.UserName == userName).Select(c => new ShowUserPanelData() { 
+            
+            Email= c.Email,
+            UserName= c.UserName,
+            RegisterDate =MiladyToShamsi.ToShamsi(c.RegisterDate),
+            Wallet=0
+            
+            }).Single();
+        }
     }
 }

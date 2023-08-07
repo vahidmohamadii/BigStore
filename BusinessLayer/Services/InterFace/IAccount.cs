@@ -16,5 +16,7 @@ namespace BusinessLayer.Services.InterFace
 
         User FindUserByUserName(string userName);
         User FindUserByUserId(int userId);
+
+        ShowUserPanelData GetUserInfoForUserPanel(string userName);
     }
 }

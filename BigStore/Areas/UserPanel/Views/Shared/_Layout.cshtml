@@ -71,7 +71,7 @@
                     <div class="col-sm-6 col-xs-12">
                         <div class="clientarea">
 
-                            @if (User.Identity.IsAuthenticated)
+                            @if(User.Identity.IsAuthenticated)
                             {
                                 <div class="loggein">
                                     <i class="zmdi zmdi-account"></i><a href=""> @User.Identity.Name ، خوش آمدی </a>
@@ -90,8 +90,8 @@
                                     <a href="/Account/Register"> عضویت </a>
                                 </div>
                             }
-
-
+              
+                         
 
                         </div>
                     </div>

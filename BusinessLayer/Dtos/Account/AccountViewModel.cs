@@ -1,6 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System;
 
 namespace BusinessLayer.Dtos.Account
 {
@@ -20,7 +21,7 @@ namespace BusinessLayer.Dtos.Account
         [MaxLength(100, ErrorMessage = "حداکثر مقدار برای {0} 100 کارکتر می باشد")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Compare("Password", ErrorMessage ="تکرار رمز عبور اشتباه است")]
+        [Compare("Password", ErrorMessage = "تکرار رمز عبور اشتباه است")]
         [DataType(DataType.Password)]
         public string RePassword { get; set; }
     }
@@ -58,6 +59,14 @@ namespace BusinessLayer.Dtos.Account
         [MaxLength(100, ErrorMessage = "حداکثر مقدار برای {0} 100 کارکتر می باشد")]
         [DataType(DataType.Password)]
         public string ReNewPassword { get; set; }
+    }
+
+    public class ShowUserPanelData
+    {
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string RegisterDate { get; set; }
+        public Double Wallet { get; set; }
     }
 
 }

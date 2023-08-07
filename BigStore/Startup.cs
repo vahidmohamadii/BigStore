@@ -51,6 +51,7 @@ namespace BigStore
                   options.AccessDeniedPath = "/LogOut";
               });
             #endregion
+
             #region Context
             services.AddDbContext<BigStoreContext>(options =>
             {
@@ -61,6 +62,7 @@ namespace BigStore
             #region Ioc
             services.AddTransient<IAccount, Account>();
             #endregion
+
             #region SendEmail
             services.AddTransient<IViewRenderService, RenderViewToString>();
             #endregion
@@ -86,6 +88,7 @@ namespace BigStore
             {
 
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute("areas", "UserPanel", "{controller=Home}/{action=Index}/{id?}");
 
 
 
