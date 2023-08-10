@@ -1,5 +1,6 @@
 ﻿
 
+using DataLayer.Entities.Wallet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace DataLayer.Entities
         [Required]
         [DisplayName("ایمیل")]
         [MaxLength(100, ErrorMessage = "حداکثر مقدار برای {0} 100 کارکتر می باشد")]
-        [EmailAddress(ErrorMessage ="فرمت ایمیل صحیح نمی باشد")]
+        [EmailAddress(ErrorMessage = "فرمت ایمیل صحیح نمی باشد")]
         public string Email { get; set; }
 
         [Required]
@@ -38,5 +39,6 @@ namespace DataLayer.Entities
 
         public DateTime RegisterDate { get; set; }
         public virtual List<UserRole> UserRoles { get; set; }
+        public virtual List<DataLayer.Entities.Wallet.Wallet> wallets { get; set; }
     }
 }

@@ -1,6 +1,5 @@
-﻿
-
-using DataLayer.Entities;
+﻿using DataLayer.Entities;
+using DataLayer.Entities.Wallet;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.Context
@@ -15,6 +14,8 @@ namespace DataLayer.Context
         public DbSet<Role> roles { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<UserRole> userRoles { get; set; }
+        public DbSet<Wallet> wallets { get; set; }
+        public DbSet<WalletType> walletTypes { get; set; }
 
     }
 }

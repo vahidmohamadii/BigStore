@@ -48,7 +48,7 @@ namespace BigStore.Controllers
             else
             {
                 var userId=  _account.AddUser(register);
-                DataLayer.Entities.User user=new DataLayer.Entities.User();
+                User user=new DataLayer.Entities.User();
                 var userForActiveCode=_account.FindUserByUserId(userId);
               
                 var body= _viewRender.RenderToStringAsync("_ActiveAccountLink", userForActiveCode);

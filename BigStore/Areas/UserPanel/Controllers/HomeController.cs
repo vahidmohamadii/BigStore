@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.InterFace;
+﻿using BusinessLayer.Dtos.Account;
+using BusinessLayer.Services.InterFace;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BigStore.Areas.UserPanel.Controllers
@@ -18,6 +19,20 @@ namespace BigStore.Areas.UserPanel.Controllers
         {
             var res = _account.GetUserInfoForUserPanel(User.Identity.Name);
             return View(res);
+        }
+        [Route("Home/EditUserPanel")]
+        [HttpGet]
+        public IActionResult EditUserPanel()
+        {
+            var res = _account.GetUserInfoForUserPanel(User.Identity.Name);
+            return View(res);
+        }
+        [Route("Home/EditUserPanel")]
+        [HttpPost]
+        public IActionResult EditUserPanel(EditUserPanelData editUserPanel)
+        {
+           _account.EditUserInfoForUserPanel(User.Identity.Name, editUserPanel);
+            return View();
         }
     }
 }

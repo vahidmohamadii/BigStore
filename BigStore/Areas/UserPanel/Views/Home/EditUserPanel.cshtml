@@ -1,0 +1,45 @@
+﻿@model BusinessLayer.Dtos.Account.ShowUserPanelData
+
+@{
+    Layout = "_layout";
+}
+<head>
+    <meta charset="UTF-8">
+    <title> ویرایش پنل کاربری</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+</head>
+<main class="client-page">
+    <div class="container-content">
+
+        <header><h2> پنل کاربری </h2></header>
+
+        <div class="form-layer">
+
+            <form asp-controller="Home" asp-action="EditUserPanel" method="post"  enctype="multipart/form-data">
+                <input type="hidden" asp-for="ImageName" />
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input type="text" class="form-control" placeholder="ایمیل" asp-for="Email">
+                </div>
+
+            
+
+                <input type="file" asp-for="ProfilePic" />
+                <img class="thumbnail" src="/UserAvatar/@Model.ImageName" />
+             
+          
+
+
+              
+
+                <button class="btn btn-success"> ثبت </button>
+
+            </form>
+        </div>
+
+    </div>
+</main>

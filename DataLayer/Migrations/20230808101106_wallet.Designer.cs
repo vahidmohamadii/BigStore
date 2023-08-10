@@ -4,14 +4,16 @@ using DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(BigStoreContext))]
-    partial class BigStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20230808101106_wallet")]
+    partial class wallet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,7 +134,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("WalletTypeId");
 
-                    b.ToTable("wallets");
+                    b.ToTable("Wallet");
                 });
 
             modelBuilder.Entity("DataLayer.Entities.Wallet.WalletType", b =>
@@ -149,7 +151,7 @@ namespace DataLayer.Migrations
 
                     b.HasKey("WalletTypeId");
 
-                    b.ToTable("walletTypes");
+                    b.ToTable("WalletType");
                 });
 
             modelBuilder.Entity("DataLayer.Entities.UserRole", b =>
