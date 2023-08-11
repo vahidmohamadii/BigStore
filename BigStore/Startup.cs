@@ -1,5 +1,6 @@
 using BusinessLayer.Services.Account;
 using BusinessLayer.Services.InterFace;
+using BusinessLayer.Services.Wallet;
 using DataLayer.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -32,7 +33,7 @@ namespace BigStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddRazorPages();
 
 
             #region Athentication
@@ -61,6 +62,7 @@ namespace BigStore
 
             #region Ioc
             services.AddTransient<IAccount, Account>();
+            services.AddTransient<IAdminUser, AdminUser>();
             #endregion
 
             #region SendEmail
@@ -78,7 +80,7 @@ namespace BigStore
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseRouting();
             app.UseStaticFiles();
             app.UseAuthentication();
@@ -89,7 +91,7 @@ namespace BigStore
 
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapAreaControllerRoute("areas", "UserPanel", "{controller=Home}/{action=Index}/{id?}");
-
+                endpoints.MapRazorPages();
 
 
             });
