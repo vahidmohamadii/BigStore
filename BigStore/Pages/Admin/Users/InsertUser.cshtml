@@ -1,0 +1,49 @@
+﻿@page
+@model BigStore.Pages.Admin.Users.InsertUserModel
+@{
+}
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input class="form-control" placeholder="نام کاربری" asp-for="InsertUserViewModel.UserName" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" placeholder="ایمیل" asp-for="InsertUserViewModel.Email" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" placeholder="رمز عبور" asp-for="InsertUserViewModel.Password" />
+    </div>
+
+    <div class="checkbox">
+        @Html.CheckBoxFor(x=>x.InsertUserViewModel.IsActive)
+        <label>
+           
+            ایا فعال است ؟
+        </label>
+    </div>
+
+    <div class="checkbox">
+
+@*
+        @foreach (var item in ViewData["Roles"] as List<DataLayer.Entities.Role>)
+        {
+
+
+            <input type="checkbox"  name="@item.RoleId"  />
+            <label>
+                 @item.RoleName
+            </label>
+        }*@
+
+    </div>
+
+
+    <div class="form-group">
+        <input type="file" asp-for="InsertUserViewModel.UserAvatar" />
+    </div>
+
+
+    <input type="submit" value="ثبت" /> 
+</form>
+
