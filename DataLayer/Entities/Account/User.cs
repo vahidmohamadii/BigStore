@@ -1,5 +1,6 @@
 ﻿
 
+using DataLayer.Entities.Course;
 using DataLayer.Entities.Wallet;
 using System;
 using System.Collections.Generic;
@@ -40,5 +41,6 @@ namespace DataLayer.Entities
         public DateTime RegisterDate { get; set; }
         public virtual List<UserRole> UserRoles { get; set; }
         public virtual List<DataLayer.Entities.Wallet.Wallet> wallets { get; set; }
+        public virtual List<DataLayer.Entities.Course.Course> Courses { get; set; }
     }
 }
