@@ -1,0 +1,27 @@
+﻿@page
+@model BigStore.Pages.Admin.Group.AddGroupModel
+@{
+}
+
+
+<form method="post">
+
+    <div class="input-group">
+        <span class="input-group-addon" ><i class="zmdi zmdi-account"></i></span>
+        <input type="text" class="form-control" placeholder="نام " asp-for="addGroupViewModel.TiTle">
+    </div>
+
+
+
+    <div class="input-group">
+        <span class="input-group-addon" ><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addGroupViewModel.ParentId" asp-items="(IEnumerable<SelectListItem>)@ViewData["GetAllGroup"]">
+
+        </select>
+    </div>
+
+
+
+    <button class="btn btn-success"> ثبت </button>
+
+</form>

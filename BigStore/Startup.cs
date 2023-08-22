@@ -1,4 +1,5 @@
 using BusinessLayer.Services.Account;
+using BusinessLayer.Services.AdminGroup;
 using BusinessLayer.Services.InterFace;
 using BusinessLayer.Services.Wallet;
 using DataLayer.Context;
@@ -63,6 +64,7 @@ namespace BigStore
             #region Ioc
             services.AddTransient<IAccount, Account>();
             services.AddTransient<IAdminUser, AdminUser>();
+            services.AddTransient<IAdminGroup, Group>();
             #endregion
 
             #region SendEmail
