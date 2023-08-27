@@ -34,7 +34,7 @@ namespace DataLayer.Entities.Course
         public string ImageName { get; set; }
         public string DemoFileName { get; set; }
         public DateTime CreateDate { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         [ForeignKey("CourseGroupId")]
         public Group group { get; set; }
         [ForeignKey("CourseSubGroupId")]

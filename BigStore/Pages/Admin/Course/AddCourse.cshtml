@@ -1,0 +1,64 @@
+﻿@page
+@model BigStore.Pages.Admin.Course.AddCourseModel
+@{
+}
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <input type="text" class="form-control" placeholder="نام " asp-for="addCourseViewModel.Title">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <input type="text" class="form-control" placeholder="توضیحات " asp-for="addCourseViewModel.Description">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <input type="text" class="form-control" placeholder="قیمت " asp-for="addCourseViewModel.Price">
+    </div>
+
+
+
+
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addCourseViewModel.CourseGroupId" asp-items="(IEnumerable<SelectListItem>)@ViewData["Group"]">
+        </select>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addCourseViewModel.TeacherId" asp-items="(IEnumerable<SelectListItem>)@ViewData["Teacher"]">
+        </select>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addCourseViewModel.CourseStatusId" asp-items="(IEnumerable<SelectListItem>)@ViewData["Status"]">
+        </select>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addCourseViewModel.CourseLevelId" asp-items="(IEnumerable<SelectListItem>)@ViewData["Level"]">
+        </select>
+    </div>
+@*    <div class="input-group">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <select asp-for="addCourseViewModel.CourseSubGroupId" asp-items="(IEnumerable<SelectListItem>)@ViewData["GetAllGroup"]">
+        </select>
+    </div>*@
+
+    <div class="form-group">
+        <label>فیلم دمو</label>
+        <input type="file" asp-for="addCourseViewModel.DemoFile" />
+    </div>
+
+    <div class="form-group">
+        <label>عکس دوره</label>
+        <input type="file" asp-for="addCourseViewModel.ImageFile" />
+    </div>
+
+    <button class="btn btn-success"> ثبت </button>
+
+</form>
